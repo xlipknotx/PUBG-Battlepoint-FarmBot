@@ -6,8 +6,6 @@ Bot/script for Playerunknown Battlegrounds (PUBG) that AFK farms battlepoints(bp
 
 ![alt text](https://i.imgur.com/7gAKF2m.gif "Screenshot")
 
-# Support
-Temporarily reopening issues
 
 # Features
 * Auto jump from plane at random time
