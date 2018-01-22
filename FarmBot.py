@@ -8,7 +8,7 @@ from psutil import process_iter
 import PyQt5
 from PyQt5 import QtCore, QtGui
 from pyautogui import typewrite, keyDown, keyUp, screenshot, press, click, moveTo
-
+from coords import coordinadas, salir
 class Bot:
     def __init__(self):
         self.pubg_url = 'steam://rungameid/578080'
@@ -282,15 +282,17 @@ class Bot:
             elif self.state == self.play_state:
                 # print(text_position[0], text_position[1])
                 if not self.pixelMatchesColor(text_position[0], text_position[1], text_start_color, tolerance=color_tolerance):
-                    wait_for_plane = randint(40, 70)
+                    wait_for_plane = randint(40, 60)
                     print('Time selected was {} seconds'.format(wait_for_plane))
                     sleep(wait_for_plane)
                     press('f')
                     print('F was hit')
-                    timeout = time() + 265 - wait_for_plane
+                    timeout = time() + 315 - wait_for_plane
                     keyDown('w')
                     # keyDown('d')
                     keyDown('shiftleft')
+                    keyDown('space')
+                    print('Pressing space to let you alive if you fell in the water')
                     runOnce = False
                     stopRunning = False
                     while True:
@@ -312,6 +314,7 @@ class Bot:
                         else:
                             break
                     keyUp('shiftleft')
+                    keyUp('space')
                     press('capslock')
                     press('esc')
                     sleep(animation_delay)
@@ -320,6 +323,8 @@ class Bot:
                     click(exit_position[0], exit_position[1])
                     self.changeState(self.loading_state)
                     #print('Going in menu. Loading again')
+                    salir()
+                    coordinadas()
                     sleep(10)
             sleep(refresh_rate)
             self.timer += refresh_rate

@@ -18,7 +18,6 @@ Make sure the game isnt open.
 
 MAKE SURE YOU ARE RUNNING FULLSCREEN WINDOWED WITH RESHADE TURNED OFF
 
-Discord: https://discord.gg/vQxmu8S
 
 
 
@@ -35,4 +34,4 @@ TURN OFF WALLPAPER ENGINE:
 
 it conflicts with this bot and will cause it to not work correctly
 
-If you share this bot please make sure you credit me @  https://github.com/Cleeez/PUBG-Battlepoint-FarmBot
+If you share this bot please make sure you credit me 
