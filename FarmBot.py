@@ -9,6 +9,7 @@ import PyQt5
 from PyQt5 import QtCore, QtGui
 from pyautogui import typewrite, keyDown, keyUp, screenshot, press, click, moveTo
 from coords import coordinadas, salir
+puntos = 0
 class Bot:
     def __init__(self):
         self.pubg_url = 'steam://rungameid/578080'
@@ -324,8 +325,11 @@ class Bot:
                     self.changeState(self.loading_state)
                     #print('Going in menu. Loading again')
                     salir()
+                    global puntos
+                    puntos = puntos + 60
+                    print ("You have earned " + str(puntos) + "BP")
                     coordinadas()
-                    sleep(10)
+                    sleep(5)
             sleep(refresh_rate)
             self.timer += refresh_rate
             self.checkTimer()
