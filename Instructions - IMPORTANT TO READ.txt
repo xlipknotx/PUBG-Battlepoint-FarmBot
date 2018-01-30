@@ -41,3 +41,5 @@ I modded this bot to make it work and I will make more updates, as Cloxen, the m
 To update the bot use the update.exe
 
 Ignore all "virus" that can tell your antivirus that it is, just pyinstaller compile like that the .exe you have the whole code <3
+
+If it crash it might be that your GPU was Overcame
