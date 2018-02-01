@@ -9,7 +9,8 @@ def coordinadas():
 	a, b = x.split()
 	int(a)
 	int(b)
-	time.sleep(10)
+	time.sleep(4)
+	pyautogui.click((a,b))
 	pyautogui.click((a,b))
 def salir():
 	"""
@@ -22,4 +23,5 @@ def salir():
 	int(c)
 	int(d)
 	time.sleep(1)
+	pyautogui.click((c,d))
 	pyautogui.click((c,d))
