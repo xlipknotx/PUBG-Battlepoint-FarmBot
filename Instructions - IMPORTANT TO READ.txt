@@ -28,7 +28,10 @@ to stop it just press ctrl + c
 5- Do the same in the second line but with the leave game coords when you die.
 
 
-6- Open the Bot.exe, and select your screen resolution and press start.
+6- Do the same in the third line but with the reconnect of the error server are to busy (Empty as default)
+
+
+7- Open the Bot.exe, and select your screen resolution and press start.
 
 ------------------------------------------------------------------------
 

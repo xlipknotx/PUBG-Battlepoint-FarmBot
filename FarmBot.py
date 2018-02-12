@@ -8,7 +8,7 @@ from psutil import process_iter
 import PyQt5
 from PyQt5 import QtCore, QtGui
 from pyautogui import typewrite, keyDown, keyUp, screenshot, press, click, moveTo
-from coords import coordinadas, salir
+from coords import coordinadas, salir , busy
 puntos = 0
 class Bot:
     def __init__(self):
@@ -325,12 +325,11 @@ class Bot:
                     self.changeState(self.loading_state)
                     #print('Going in menu. Loading again')
                     salir()
-                    print('Click on leave game jus in case that you died')
                     global puntos
                     puntos = puntos + 60
                     print ("You have earned " + str(puntos) + "BPs")
                     coordinadas()
-                    print('Click on cancel just i case that the reconnect button is there')
+                    busy()
                     sleep(5)
             sleep(refresh_rate)
             self.timer += refresh_rate
