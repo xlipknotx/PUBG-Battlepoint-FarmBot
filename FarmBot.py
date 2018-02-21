@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from datetime import datetime
 import json
 from os import _exit, startfile
 from time import sleep, time
@@ -8,8 +8,9 @@ from psutil import process_iter
 import PyQt5
 from PyQt5 import QtCore, QtGui
 from pyautogui import typewrite, keyDown, keyUp, screenshot, press, click, moveTo
-from coords import coordinadas, salir , busy
+from coords import coordinadas, salir , busy , showbps
 puntos = 0
+actual_time= str(datetime.now().strftime('%Y-%m-%d %H-%M-%S'))
 class Bot:
     def __init__(self):
         self.pubg_url = 'steam://rungameid/578080'
@@ -291,9 +292,9 @@ class Bot:
                     timeout = time() + 315 - wait_for_plane
                     keyDown('w')
                     # keyDown('d')
-                    keyDown('shiftleft')
+                    # keyDown('shiftleft')
                     keyDown('space')
-                    print('Pressing space to let you alive if you fell in the water')
+                    print('Pressing space to let you alive if you fall in the water')
                     runOnce = False
                     stopRunning = False
                     while True:
@@ -314,7 +315,7 @@ class Bot:
                                 runOnce = True
                         else:
                             break
-                    keyUp('shiftleft')
+                    #keyUp('shiftleft')
                     keyUp('space')
                     press('capslock')
                     press('esc')
@@ -328,6 +329,8 @@ class Bot:
                     global puntos
                     puntos = puntos + 60
                     print ("You have earned " + str(puntos) + "BPs")
+                    global actual_time
+                    showbps(str(puntos),actual_time)
                     coordinadas()
                     busy()
                     sleep(5)

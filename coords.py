@@ -58,3 +58,7 @@ def busy():
 		print('Click the reconnect msg in case servers are busy')
 	except IndexError:
 		print('You don´t have the coords for servers are busy')
+def showbps(numero, actual_time):
+	f = open('BPs won %s.txt'%actual_time,'w')
+	f.write("Total BPs won" + numero)
+	f.close

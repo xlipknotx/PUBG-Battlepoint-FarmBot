@@ -148,7 +148,7 @@ class Ui_Dialog(object):
             if proc.name() == self.PROCNAME:
                 proc.kill()
                 _exit(1)
-        QCoreApplication.instance().quit
+            QCoreApplication.instance().quit
     
     
     def set_res(self, res):
@@ -165,7 +165,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "PUBG BP Farmer"))
+        Dialog.setWindowTitle(_translate("Dialog", "PUBG BP Farmer forked by peleon02"))
         self.Start.setText(_translate("Dialog", "Start!"))
         self.stop.setText(_translate("Dialog", "Stop"))
         self.teneighty.setText(_translate("Dialog", "1920x1080p"))
