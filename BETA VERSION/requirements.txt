@@ -1,0 +1,29 @@
+
+
+install python 3.6 and make sure you check the box to install pip to envir variables
+
+guide: https://matthewhorne.me/how-to-install-python-and-pip-on-windows-10/
+
+once python is installed, open up cmd(or powershell) and run this:
+
+pip install pyautogui
+
+pip install psutil
+
+pip install Pillow
+
+pip install pyqt5
+
+
+
+Afterwards run: (you can run this from cmd/powershell by shift + right clicking inside of whatever folder the .py files are in)
+python botgui.py
+
+
+
+------------------------------------------------------------------------
+Added by peleon02 22-01-18 
+I fixed the "Game still in progress" and If you die it clicks the return to lobby
+all you have to do is put the resolution of the coords of the "cancel"
+the 1080 coords are already put it in the file input.txt (The coords have to be like first one (space) second one), 1080 =" 1021 626 " (Without "" obviously)
+and you also have to put ur coords to skip to lobby, in the 2nd line the 1080 coords are 1721 960
