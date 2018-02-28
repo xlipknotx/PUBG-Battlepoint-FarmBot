@@ -334,7 +334,7 @@ class Bot:
             sleep(refresh_rate)
             self.timer += refresh_rate
             self.checkTimer()
-            funciona = Bot.isGameRunning()
+            funciona = Bot.isGameRunning(self)
             if funciona is False:
             	try:
             		startfile(self.pubg_url)
