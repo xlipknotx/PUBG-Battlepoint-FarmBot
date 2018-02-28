@@ -204,7 +204,6 @@ class Bot:
             print('Something went wrong while killing bug reporter... Error message: {}'.format(ex))
         #counter = 1
         while True:
-
             if self.state == self.start_state:
                 if self.pixelMatchesColor(error_position_check[0], error_position_check[1], windows_background,
                                     tolerance=color_tolerance):
@@ -335,3 +334,13 @@ class Bot:
             sleep(refresh_rate)
             self.timer += refresh_rate
             self.checkTimer()
+            funciona = Bot.isGameRunning()
+            if funciona is False:
+            	try:
+            		startfile(self.pubg_url)
+            		self.changeState(self.loading_state)
+            		sleep(start_delay)
+            		print('Loading PUBG Again xD')
+            	except Exception:
+            		print(' If this doesn´t work, report it pls')
+

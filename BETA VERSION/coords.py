@@ -45,10 +45,10 @@ def busy():
 	If servers are busy click
 	"""
 	try:
-		file23 = open("input.txt" , "r", encoding="utf-8")
-		lines23 = file23.readlines()
-		y = lines23[2]
-		e, f = y.split()
+		file24 = open("input.txt" , "r", encoding="utf-8")
+		lines24 = file24.readlines()
+		z = lines24[2]
+		e, f = z.split()
 		int(e)
 		int(f)
 		time.sleep(2)
