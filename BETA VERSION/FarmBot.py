@@ -7,6 +7,7 @@ import json
 from os import _exit, startfile
 from time import sleep, time
 from random import randint
+import psutil
 from psutil import process_iter
 #import PyQt5
 #from PyQt5 import QtCore, QtGui
@@ -21,7 +22,7 @@ actual_time= str(datetime.now().strftime('%Y-%m-%d %H-%M-%S'))
 class Bot:
     def __init__(self): #the config of the object when it´s created
         self.pubg_url = 'steam://rungameid/578080' #bubg URL
-        self.PROCNAME = "TslGame.exe" #process name
+        self.game = "TslGame.exe" #process name
         self.CRASH_PROCNAME = "BroCrashReporter.exe" #crash process
         self.debug_directory = "debug_screenshots" 
         self.start_state = "HELLO"
@@ -82,7 +83,7 @@ class Bot:
     def killGame(self): #kill the game
         for proc in process_iter():
             # check whether the process name matches
-            if proc.name() == self.PROCNAME: #if the process name is = to the game name kill it
+            if proc.name() == self.game: #if the process name is = to the game name kill it
                 proc.kill()
                 _exit(1)
 
@@ -101,12 +102,7 @@ class Bot:
         return False
 
     def isGameRunning(self):
-        for proc in process_iter():
-            # check whether the process name matches
-            if proc.name() == self.PROCNAME:
-                return True
-            else:
-                return False
+    	self.game in (p.name() for p in psutil.process_iter())
 
     def checkTimer(self):
         if self.state == self.loading_state and self.timer > self.loading_timer_max:
@@ -331,8 +327,8 @@ class Bot:
                     coordinadas()
                     busy()
                     sleep(5)
-                    funciona = Bot.isGameRunning(self)
-                    if funciona is False:
+
+                    if self.game in (p.name() for p in psutil.process_iter()) is False:
                     	try:
                     		startfile(self.pubg_url)
                     		self.changeState(self.loading_state)
@@ -343,4 +339,4 @@ class Bot:
             sleep(refresh_rate)
             self.timer += refresh_rate
             self.checkTimer()
-
+          
