@@ -331,16 +331,16 @@ class Bot:
                     coordinadas()
                     busy()
                     sleep(5)
+                    funciona = Bot.isGameRunning(self)
+                    if funciona is False:
+                    	try:
+                    		startfile(self.pubg_url)
+                    		self.changeState(self.loading_state)
+                    		sleep(start_delay)
+                    		print('Loading PUBG Again xD')
+                    	except Exception:
+                    		print(' If this doesn´t work, report it pls')
             sleep(refresh_rate)
             self.timer += refresh_rate
             self.checkTimer()
-            funciona = Bot.isGameRunning(self)
-            if funciona is False:
-            	try:
-            		startfile(self.pubg_url)
-            		self.changeState(self.loading_state)
-            		sleep(start_delay)
-            		print('Loading PUBG Again xD')
-            	except Exception:
-            		print(' If this doesn´t work, report it pls')
 
