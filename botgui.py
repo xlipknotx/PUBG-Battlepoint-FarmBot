@@ -5,19 +5,20 @@
 # Created by: PyQt5 UI code generator 5.9.1
 #
 # WARNING! All changes made in this file will be lost!
-import FarmBot
 from FarmBot import Bot
 import webbrowser
 import sys
-import shutil
-import os
-import subprocess
-from time import sleep
+#import shutil
+#import os
+#import subprocess
+#from time import sleep
 from PyQt5 import QtCore, QtGui, QtWidgets
-import coords
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+#import coords
 
-from PyQt5 import QtCore, QtGui
-from os import _exit, startfile
+#from PyQt5 import QtCore, QtGui
+from os import _exit
 from psutil import process_iter
 import threading
 
@@ -193,7 +194,7 @@ class Ui_Dialog(object):
 #import pubgimage_rc
 
 if __name__ == "__main__":
-    import sys
+    #import sys
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()

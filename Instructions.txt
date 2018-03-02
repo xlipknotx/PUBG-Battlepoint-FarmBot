@@ -1,0 +1,112 @@
+                .__                          _______   ________  
+______    ____  |  |    ____   ____    ____  \   _  \  \_____  \ 
+\____ \ _/ __ \ |  |  _/ __ \ /  _ \  /    \ /  /_\  \  /  ____/ 
+|  |_> >\  ___/ |  |__\  ___/(  <_> )|   |  \\  \_/   \/       \ 
+|   __/  \___  >|____/ \___  >\____/ |___|  / \_____  /\_______ \
+|__|         \/            \/             \/        \/         \/
+Don´t ask any question if you don´t follow this Instructions.
+
+1-Install python with pip installed, if you have already installed python and you don´t have pip, download this https://goo.gl/cKvcVZ and run it with python (shift + rightclick in the folder and open a CMD here and use =  python get-pip.py)
+
+2- After the first step use this in the same folder:
+		pip install pyautogui
+
+		pip install psutil
+
+		pip install Pillow
+
+		pip install pyqt5
+
+
+3-Now you will have installed python and pip with the needed modules,
+so lets put your coords (unless you use 1920x1080 (already there)), for that go here https://pastebin.com/DHBQB0XU
+create a python file (make sure to have the option to see the extension of the file) 
+so just a file with the name that you want with that code but with .py not .txt
+
+4- As it says the step 3 if you use 1080 just leave it like that if not, 
+you have to put the coords in the first line of the reconnect button,
+in the second line the coords of the button to leave to lobby when you die (right botton corner),
+and in the thirth line the coords of the reconnect to the servers are busy msg. It has to be like that (with your cords ofc)
+
+1021 626
+1721 960
+972 615
+
+------------------------------------------------------------------------
+Notes
+------------------------------------------------------------------------
+1- If you have an error please report it on twitter @kpg_02, github or MPGH
+
+2- If you want to contribute just tell me it <3
+
+3- If you have less or 8 GB of ram you will be getting a msg that cannot be closed
+because the PC has to be rebooted at 2 hours of running the bot
+
+4- It can work with an empty input.txt (But it won´t click) (But make sure to have the input.txt)
+
+5- Around 6k per 8 hours without you having to do anything ( 42k bp a week @ 8 hours a day, all the crates + sell them on steam)
+
+6- If you want to support me paypal peleonyt@gmail.com or just a thx in MPGH
+------------------------------------------------------------------------
+CLOXEN NOTES (First developer (I´m just the current one))
+------------------------------------------------------------------------
+Make sure you change your montior resolution to match whatever resolution you pick in the bot, otherwise it wont work correctly.
+
+
+Turn off any color corrections like reshade before using the bot otherwise it will not work. 
+
+Directions: 
+
+Make sure the game isnt open.
+
+1.Open the bot (it takes a few seconds to load)
+2. Choose your resolution 
+3. hit start
+4. The bot will open the game. Wait for the game to load and the bot wiill auto start working. (Dont worry if the bot ui freezes up, thats normal. )
+
+MAKE SURE YOU ARE RUNNING FULLSCREEN WINDOWED WITH RESHADE TURNED OFF
+
+If you run into any errors, find the bot not working correctly, or not running: 
+
+* Check the help tab in the bot
+* if the bot is crashing, open cmd or powershell first, then run python botgui.py and let me know what error you got 
+
+TURN OFF WALLPAPER ENGINE:
+
+it conflicts with this bot and will cause it to not work correctly
+------------------------------------------------------------------------
+CLOXEN NOTES (First developer (I´m just the current one))
+------------------------------------------------------------------------
+
+This bot will: 
+
+* auto jump at a random point on the plane.
+
+* auto hold down the space bar just in case you land in water and end up underwater 
+
+* It will also lay down after running and jumping. 
+
+* I added a few more configs to the bot so it supports 2560x 1440p and 2560 x1080p. I dont have the last resolution so it might not work well for 2560 x 1080p.
+
+* Create a file that tells you the Bps that you have won (It couldn´t be exact)
+
+* Leave all the buttons (die(JUST WAIT BEFORE FLAME), reconnect, and servers busy)
+
+* Can work with an empty input.txt ofc, it wont click that xD
+
+
+Future changes:
+
+*Make sure that the bor reopen the GAME
+
+*"Laptop mode", to turn the bot off for 30m (with the game too ofc) (in april I should have it)
+
+*Tell me more <3	
+
+                .__                          _______   ________  
+______    ____  |  |    ____   ____    ____  \   _  \  \_____  \ 
+\____ \ _/ __ \ |  |  _/ __ \ /  _ \  /    \ /  /_\  \  /  ____/ 
+|  |_> >\  ___/ |  |__\  ___/(  <_> )|   |  \\  \_/   \/       \ 
+|   __/  \___  >|____/ \___  >\____/ |___|  / \_____  /\_______ \
+|__|         \/            \/             \/        \/         \/
+
