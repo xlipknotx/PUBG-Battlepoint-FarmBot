@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 #LIBS Import
 from datetime import datetime
 import json
@@ -9,8 +8,6 @@ from time import sleep, time
 from random import randint
 import psutil
 from psutil import process_iter
-#import PyQt5
-#from PyQt5 import QtCore, QtGui
 from pyautogui import keyDown, keyUp, screenshot, press, click, moveTo
 from coords import coordinadas, salir , busy , showbps
 #Libs import end
@@ -38,12 +35,8 @@ class Bot:
         self.takeScrenshot = True
         self.timer = 0.0
         self.config = None
-        # self.resolution_choice = '1440'
     
-    #resolution_choice = input('What resolution do you play at(I.E 720, 1080, 1440)?: ').strip()
-    
-    
-    def setConfig(self, resolution_choice):
+    def setConfig(self, resolution_choice): #Choose the resolution
         with open('configRes.json', encoding='UTF-8') as data_file:
             global data
             data = json.load(data_file)
@@ -60,7 +53,7 @@ class Bot:
     def getpixel(self,x, y):
         return screenshot().getpixel((x, y))
 
-    def pixelMatchesColor(self, x, y, expectedRGBColor, tolerance=0):
+    def pixelMatchesColor(self, x, y, expectedRGBColor, tolerance=0): #Check if the color is right
         pix = self.getpixel(x,y)
         if len(pix) == 3 and len(expectedRGBColor) == 3:  # RGB mode
             r, g, b = pix[:3]
@@ -101,10 +94,10 @@ class Bot:
             return True
         return False
 
-    def isGameRunning(self):
+    def isGameRunning(self): #True if the game is running false if not
     	self.game in (p.name() for p in psutil.process_iter())
 
-    def checkTimer(self):
+    def checkTimer(self): #Check for timeout
         if self.state == self.loading_state and self.timer > self.loading_timer_max:
             # printScreen('Timeout')
             print('Timeout. Restarting the game')
@@ -124,29 +117,20 @@ class Bot:
 
 
     # Colors
-    def getColor(self, name):
+    def getColor(self, name): #Get the color of the pixel
         return (self.config["colors"][name]["r"], self.config["colors"][name]["g"], self.config["colors"][name]["b"])
 
-    def run(self):
-        # Menu
-        # print('By using this software you agree with license! You can find it in code.')
-        #print('Choose a server:')
+    def run(self): #Just run the bot
+        #Useless code
         number = 1
         for server in self.config['servers']:
-            #print('{}. {}'.format(number, server['title']))
             number += 1
-        # inp = int(input('Type number: '))
-        # inp -= 1
         inp = 0
-        #server_position = (self.config['servers'][inp]['x'], self.config['servers'][inp]['y'], self.config['servers'][inp]['title'])
-        #print('Choose a mod:')
         number = 1
         for server in self.config['modes']:
-            #print('{}. {}'.format(number, server['title']))
             number += 1
-        # inp = int(input('Type number: '))
-        #inp -= 1
         inp = 1
+        #Useless code
 
         # Position init
         mode_position = (self.config['modes'][inp]['x'], self.config['modes'][inp]['y'], self.config['modes'][inp]['title'])
@@ -167,27 +151,18 @@ class Bot:
         start_delay = self.config["timers"]["start_delay"]
         animation_delay = self.config["timers"]["animation_delay"]
         wait_for_players = self.config["timers"]["wait_for_players"]
-        #wait_for_plain = self.config["timers"]["wait_for_plain"]
         exit_animation_delay = self.config["timers"]["exit_animation_delay"]
         loading_delay = self.config["timers"]["loading_delay"]
         color_tolerance = self.config["color_tolerance"]
         dark_play_color = self.getColor("dark_play_color")
-        #print("dark play color is {}".format(dark_play_color))
         play_color = self.getColor("play_color")
         matching_color = self.getColor("matching_color")
         matching_tick_color = self.getColor("matching_tick_color")
         text_start_color = self.getColor("text_start_color")
-        #white_button = self.getColor("white_button")
-        #print("white color is {}".format(white_button))
-        #gray_button = self.getColor("gray_button")
-        #golden_button = self.getColor("golden_button")
-        #super_white_button = self.getColor("super_white_button")
         windows_background = self.getColor("windows_background")
         exit_button_color = self.getColor("exit_button_color")
         reconnect_button_color = self.getColor("reconnect_button_color")
-
         # Game info
-        #print('Server: {}. Mode: {}'.format(server_position[2], mode_position[2]))
         try:
             for proc in process_iter():
                 # check whether the process name matches
@@ -198,8 +173,7 @@ class Bot:
                     self.changeState(self.start_state)
         except Exception as ex:
             print('Something went wrong while killing bug reporter... Error message: {}'.format(ex))
-        #counter = 1
-        while True:
+        while True: #Just run this in bucle
             if self.state == self.start_state:
                 if self.pixelMatchesColor(error_position_check[0], error_position_check[1], windows_background,
                                     tolerance=color_tolerance):
@@ -224,8 +198,6 @@ class Bot:
                     moveTo(play_button_position[0], play_button_position[1])
                     sleep(animation_delay)
                     print('selecting the game mode')
-                    # Pick a server
-                    #click(server_position[0], server_position[1])
                     sleep(animation_delay)
                     click(mode_position[0], mode_position[1])
                     sleep(animation_delay)
@@ -308,7 +280,6 @@ class Bot:
                                 runOnce = True
                         else:
                             break
-                    #keyUp('shiftleft')
                     keyUp('space')
                     press('capslock')
                     press('esc')
@@ -327,7 +298,6 @@ class Bot:
                     coordinadas()
                     busy()
                     sleep(5)
-
                     if self.game in (p.name() for p in psutil.process_iter()) is False:
                     	try:
                     		startfile(self.pubg_url)
@@ -338,5 +308,13 @@ class Bot:
                     		print(' If this doesn´t work, report it pls')
             sleep(refresh_rate)
             self.timer += refresh_rate
+            if self.game in (p.name() for p in psutil.process_iter()) is False:
+            	try:
+            		startfile(self.pubg_url)
+            		self.changeState(self.loading_state)
+            		sleep(start_delay)
+            		print('Loading PUBG Again xD')
+            	except Exception:
+            		print(' If this doesn´t work, report it pls')
             self.checkTimer()
           
