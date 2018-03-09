@@ -78,7 +78,7 @@ class Bot:
             # check whether the process name matches
             if proc.name() == self.game: #if the process name is = to the game name kill it
                 proc.kill()
-            _exit(1)
+                _exit(1)
 
     def matchesButton(self, position):
         if self.pixelMatchesColor(position[0], position[1], self.getColor('white_button'),
