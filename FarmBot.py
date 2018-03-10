@@ -185,6 +185,7 @@ class Bot:
                     startfile(self.pubg_url)
                     self.changeState(self.loading_state)
                     sleep(start_delay)
+                    sleep(10)
                     print('Loading PUBG')
                 except Exception as ex:
                     print('Something went wrong while starating PUBG... Error message: {}'.format(ex))
